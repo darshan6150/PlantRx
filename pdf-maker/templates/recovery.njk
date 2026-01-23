@@ -1,0 +1,34 @@
+{% extends "base.njk" %}
+{% block content %}
+<h2>Daily Recovery Blocks</h2>
+<div class="grid-3">
+  <div class="card"><h3>Morning</h3><ul class="list-tight">{% for i in blocks.morning %}<li>{{ i }}</li>{% endfor %}</ul></div>
+  <div class="card"><h3>Midday</h3><ul class="list-tight">{% for i in blocks.midday %}<li>{{ i }}</li>{% endfor %}</ul></div>
+  <div class="card"><h3>Evening</h3><ul class="list-tight">{% for i in blocks.evening %}<li>{{ i }}</li>{% endfor %}</ul></div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>Weekly Recovery Chart</h2>
+<table class="table">
+  <thead><tr><th>Week</th><th>Sleep (hrs)</th><th>Soreness (1–10)</th><th>Energy (1–10)</th><th>Notes</th></tr></thead>
+  <tbody>{% for w in [1,2,3,4] %}<tr><td>{{ w }}</td><td></td><td></td><td></td><td></td></tr>{% endfor %}</tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>Habit Reminders</h2>
+<ul class="list-tight">{% for h in habits %}<li><span class="checkbox"></span>{{ h }}</li>{% endfor %}</ul>
+
+<div class="page-break"></div>
+
+<h2>Weekly Reflection</h2>
+<div class="grid-2">
+  {% for w in [1,2,3,4] %}
+  <div class="card">
+    <h3>Week {{ w }}</h3>
+    <div style="height:120px;border:1px dashed var(--line); border-radius:8px;"></div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

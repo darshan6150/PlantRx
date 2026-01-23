@@ -1,0 +1,37 @@
+{% extends "base.njk" %}
+{% block content %}
+<h2>AM Routine (Daily Checklist)</h2>
+<table class="table">
+  <thead><tr><th>Day</th><th>Cleanser</th><th>Moisturizer</th><th>Sunscreen</th><th>Notes</th></tr></thead>
+  <tbody>{% for d in days30 %}<tr><td>Day {{ d }}</td><td></td><td></td><td></td><td></td></tr>{% endfor %}</tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>PM Routine (Daily Checklist)</h2>
+<table class="table">
+  <thead><tr><th>Day</th><th>Cleanser</th><th>Treatment</th><th>Moisturizer</th><th>Journal (Y/N)</th></tr></thead>
+  <tbody>{% for d in days30 %}<tr><td>Day {{ d }}</td><td></td><td></td><td></td><td></td></tr>{% endfor %}</tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>Weekly Notes & Reactions</h2>
+<div class="grid-2">
+  {% for w in [1,2,3,4] %}
+  <div class="card">
+    <h3>Week {{ w }}</h3>
+    <div style="height:120px;border:1px dashed var(--line); border-radius:8px;"></div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="page-break"></div>
+
+<h2>Progress Markers</h2>
+<div class="grid-3">
+  <div class="card"><h3>Before</h3><div style="height:120px;border:1px dashed var(--line); border-radius:8px;"></div></div>
+  <div class="card"><h3>Week 2</h3><div style="height:120px;border:1px dashed var(--line); border-radius:8px;"></div></div>
+  <div class="card"><h3>Week 4</h3><div style="height:120px;border:1px dashed var(--line); border-radius:8px;"></div></div>
+</div>
+{% endblock %}

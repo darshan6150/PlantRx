@@ -1,0 +1,46 @@
+{% extends "base.njk" %}
+{% block content %}
+<h2>Morning Ritual Checklist</h2>
+<ul class="list-tight">
+  {% for r in morning_ritual %}<li><span class="checkbox"></span>{{ r }}</li>{% endfor %}
+</ul>
+
+<div class="page-break"></div>
+
+<h2>Daily Wellness Tracker</h2>
+<table class="table">
+  <thead><tr><th>Metric</th>{% for d in days %}<th>{{ d }}</th>{% endfor %}</tr></thead>
+  <tbody>
+    <tr><td>Mood (1–10)</td>{% for d in days %}<td></td>{% endfor %}</tr>
+    <tr><td>Energy (1–10)</td>{% for d in days %}<td></td>{% endfor %}</tr>
+    <tr><td>Sleep (hrs)</td>{% for d in days %}<td></td>{% endfor %}</tr>
+    <tr><td>Hydration (✓)</td>{% for d in days %}<td></td>{% endfor %}</tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>Weekly Challenges</h2>
+<div class="grid-2">
+  {% for c in weekly_challenges %}
+  <div class="card">
+    <h3>{{ c.title }}</h3>
+    <ul class="list-tight">{% for step in c.steps %}<li>{{ step }}</li>{% endfor %}</ul>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="page-break"></div>
+
+<h2>Vision & Affirmations</h2>
+<div class="grid-2">
+  <div class="card">
+    <h3>My Why</h3>
+    <div style="height:120px;border:1px dashed var(--line); border-radius:8px;"></div>
+  </div>
+  <div class="card">
+    <h3>Affirmations</h3>
+    <ul class="list-tight">{% for a in affirmations %}<li>"{{ a }}"</li>{% endfor %}</ul>
+  </div>
+</div>
+{% endblock %}

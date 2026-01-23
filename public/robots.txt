@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://plantrxapp.com/sitemap.xml
+
+# Allow crawling of important pages
+Allow: /remedies
+Allow: /blog
+Allow: /experts
+Allow: /store
+Allow: /about
+Allow: /contact
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /*.json$
+
+# Crawl delay to be respectful
+Crawl-delay: 1

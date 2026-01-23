@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ meta.title }}</title>
+</head>
+<body>
+  <div class="header">
+    <div class="title">{{ meta.title }}</div>
+    <div class="small">Duration: {{ meta.duration }} | Type: {{ meta.type }} | Difficulty: {{ meta.difficulty }}</div>
+    <div class="small">Generated: {{ generated_at }} | Page Size: {{ page_size }}</div>
+    <div class="small">PlantRx · plantrxapp.com</div>
+  </div>
+
+  {% block content %}{% endblock %}
+
+  <div class="footer-note">
+    This guide is for educational purposes only and is not a substitute for professional medical advice. Consult a qualified professional before starting any new plan.
+  </div>
+</body>
+</html>

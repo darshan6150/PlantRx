@@ -1,0 +1,109 @@
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+client/.env
+client/.env.local
+server/.env
+server/.env.local
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build Output
+dist/
+dist-ssr/
+build/
+.output/
+.vercel/
+.netlify/
+
+# Logs
+logs/
+*.log
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Files
+Thumbs.db
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Cache
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.runtimeconfig.json
+
+# Firebase Service Account Keys
+*-firebase-adminsdk-*.json
+serviceAccountKey.json
+service-account.json
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+db.json
+
+# PDF Generation Temp Files
+pdf/output/
+pdf/temp/
+pdf-maker/output/
+pdf-maker/temp/
+
+# Uploaded Files
+uploads/
+attached_assets/temp/
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite
+vite.config.ts.timestamp-*
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+tmp/
+
+# Lock files (optional - uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Misc
+.turbo
+.swc
+*.swp
+*~
+.envrc

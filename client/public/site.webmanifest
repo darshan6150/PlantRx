@@ -1,0 +1,25 @@
+{
+  "name": "PlantRx - Natural Health Remedies",
+  "short_name": "PlantRx",
+  "description": "AI-powered natural health remedies platform with 133+ expert-verified plant-based solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#059669",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en-US",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["health", "medical", "wellness", "lifestyle"]
+}

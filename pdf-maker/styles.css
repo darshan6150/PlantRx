@@ -1,0 +1,51 @@
+:root{
+  --brand: #16a34a;
+  --ink: #0f172a;
+  --muted: #334155;
+  --line: #e2e8f0;
+  --accent: #10b981;
+}
+
+@page { size: A4; margin: 72px 24px 72px 24px; }
+*{box-sizing:border-box}
+
+html, body {
+  font-family: Inter, Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.45;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+h1,h2,h3 { margin: 0 0 8px 0; line-height: 1.25; }
+h1{ font-size: 28px; color: var(--ink); }
+h2{ font-size: 20px; color: var(--ink); border-bottom: 2px solid var(--line); padding-bottom: 6px; margin-top: 16px;}
+h3{ font-size: 16px; color: var(--muted); margin-top: 14px; }
+
+.small{ font-size: 12px; color: var(--muted); }
+.muted{ color: var(--muted); }
+.hr{ height:1px; background: var(--line); margin: 12px 0; }
+
+.header { border: 2px solid var(--brand); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+.header .title { font-size: 24px; font-weight: 700; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+
+.card { border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.kv { display: grid; grid-template-columns: 140px 1fr; gap: 6px; }
+.kv div:nth-child(odd){ color: var(--muted); }
+.kv div:nth-child(even){ font-weight: 600; }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { border: 1px solid var(--line); padding: 8px; font-size: 12px; }
+.table th { background: #f8fafc; text-align: left; }
+
+.badge { display:inline-block; border:1px solid var(--line); padding:2px 6px; border-radius: 12px; font-size: 11px; color: var(--muted); }
+.checkbox { width: 12px; height: 12px; border: 1.5px solid var(--muted); display:inline-block; margin-right: 6px; border-radius: 3px; }
+
+.section { break-inside: avoid; margin-bottom: 10px; }
+.page-break { page-break-before: always; }
+.list-tight li{ margin: 2px 0; }
+.footer-note { font-size: 10px; color: var(--muted); margin-top: 8px; }

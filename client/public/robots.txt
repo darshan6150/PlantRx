@@ -1,0 +1,71 @@
+# PlantRx - Natural Health Platform
+# Optimized for maximum Google crawling and brand authority
+
+User-agent: *
+Allow: /
+
+# Priority sitemaps for better indexing
+Sitemap: https://plantrxapp.com/sitemap.xml
+Sitemap: https://plantrxapp.com/sitemap-remedies.xml
+Sitemap: https://plantrxapp.com/sitemap-blog.xml
+
+# Block ONLY private admin and dashboard areas
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /api/*
+Disallow: /settings
+Disallow: /settings/*
+
+# Allow all public content (no restrictions)
+Allow: /
+Allow: /remedies
+Allow: /remedies/*
+Allow: /blog
+Allow: /blog/*
+Allow: /smart-tools
+Allow: /workouts
+Allow: /workouts/*
+Allow: /community
+Allow: /community/*
+Allow: /experts
+Allow: /experts/*
+Allow: /store
+Allow: /store/*
+Allow: /about
+Allow: /contact
+
+# User pages - crawlable but have noindex meta tags
+Disallow: /login
+Disallow: /signup
+Disallow: /checkout
+
+# Legal pages - MUST be indexed for AdSense
+Allow: /terms
+Allow: /privacy-policy
+Allow: /cookie-policy
+Allow: /disclaimer
+Allow: /refunds
+Allow: /liability
+
+# SEO optimized crawl settings
+Crawl-delay: 0.5
+
+# Google Bot specific optimizations
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /api/*
+Disallow: /settings
+Crawl-delay: 0.2
+
+# Bing Bot optimizations  
+User-agent: bingbot
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /api/*
+Disallow: /settings
+Crawl-delay: 0.5

@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "title": "7-Day Healthy Eating Plan",
+    "duration": "7 days",
+    "type": "Diet Plan",
+    "difficulty": "Easy"
+  },
+  "weekly_plan": [
+    {
+      "day": "Mon",
+      "breakfast": "Oatmeal with banana",
+      "lunch": "Chicken salad",
+      "dinner": "Grilled fish with veggies",
+      "snacks": [
+        "Carrot sticks",
+        "Yogurt"
+      ]
+    },
+    {
+      "day": "Tue",
+      "breakfast": "Smoothie with spinach",
+      "lunch": "Tuna wrap",
+      "dinner": "Stir-fried tofu with rice",
+      "snacks": [
+        "Apple slices",
+        "Nuts"
+      ]
+    },
+    {
+      "day": "Wed",
+      "breakfast": "Scrambled eggs with toast",
+      "lunch": "Quinoa bowl with beans",
+      "dinner": "Pasta with tomato sauce",
+      "snacks": [
+        "Cucumber slices",
+        "Cheese"
+      ]
+    },
+    {
+      "day": "Thu",
+      "breakfast": "Yogurt with granola",
+      "lunch": "Vegetable soup",
+      "dinner": "Chicken stir-fry",
+      "snacks": [
+        "Orange",
+        "Popcorn"
+      ]
+    },
+    {
+      "day": "Fri",
+      "breakfast": "Fruit salad",
+      "lunch": "Turkey sandwich",
+      "dinner": "Baked salmon with broccoli",
+      "snacks": [
+        "Celery sticks",
+        "Hummus"
+      ]
+    },
+    {
+      "day": "Sat",
+      "breakfast": "Pancakes with berries",
+      "lunch": "Chickpea salad",
+      "dinner": "Beef tacos",
+      "snacks": [
+        "Peach",
+        "Trail mix"
+      ]
+    },
+    {
+      "day": "Sun",
+      "breakfast": "Chia seed pudding",
+      "lunch": "Caprese salad",
+      "dinner": "Roasted chicken with sweet potatoes",
+      "snacks": [
+        "Grapes",
+        "Dark chocolate"
+      ]
+    }
+  ],
+  "shopping_list": [
+    {
+      "category": "Proteins",
+      "items": [
+        "Chicken",
+        "Fish",
+        "Tofu",
+        "Eggs",
+        "Turkey"
+      ]
+    },
+    {
+      "category": "Carbs",
+      "items": [
+        "Oats",
+        "Rice",
+        "Pasta",
+        "Bread",
+        "Quinoa"
+      ]
+    },
+    {
+      "category": "Produce",
+      "items": [
+        "Banana",
+        "Spinach",
+        "Broccoli",
+        "Berries",
+        "Tomatoes"
+      ]
+    },
+    {
+      "category": "Snacks",
+      "items": [
+        "Yogurt",
+        "Nuts",
+        "Hummus",
+        "Popcorn",
+        "Dark chocolate"
+      ]
+    }
+  ],
+  "days": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun"
+  ]
+}

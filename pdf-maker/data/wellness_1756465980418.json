@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "30-Day Simple Wellness Plan",
+    "duration": "30 days",
+    "type": "Wellness",
+    "difficulty": "Easy"
+  },
+  "morning_ritual": [
+    "Drink a glass of water",
+    "Stretch for 5 minutes",
+    "Write down 3 things you're grateful for",
+    "Take 10 deep breaths",
+    "Set a positive intention for the day"
+  ],
+  "days": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun"
+  ],
+  "weekly_challenges": [
+    {
+      "title": "Week 1 — Daily Hydration",
+      "steps": [
+        "Drink at least 8 glasses of water each day",
+        "Track your water intake",
+        "Try flavored water with fruits"
+      ]
+    },
+    {
+      "title": "Week 2 — Mindful Eating",
+      "steps": [
+        "Eat without distractions",
+        "Chew each bite 20 times",
+        "Pause between bites"
+      ]
+    },
+    {
+      "title": "Week 3 — Daily Movement",
+      "steps": [
+        "Walk for 15 minutes each day",
+        "Try a new physical activity",
+        "Dance to your favorite song"
+      ]
+    },
+    {
+      "title": "Week 4 — Positive Thinking",
+      "steps": [
+        "Write down 2 positive thoughts daily",
+        "Compliment someone each day",
+        "Reflect on your achievements"
+      ]
+    }
+  ],
+  "affirmations": [
+    "I am capable of change.",
+    "Every small step counts.",
+    "I choose to nourish my body.",
+    "I am worthy of wellness.",
+    "I embrace positivity."
+  ]
+}

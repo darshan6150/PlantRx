@@ -1,0 +1,58 @@
+{% extends "base.njk" %}
+{% block content %}
+<h2>Weekly Meal Planner</h2>
+<table class="table">
+  <thead><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th>Snacks</th></tr></thead>
+  <tbody>
+  {% for day in weekly_plan %}
+    <tr><td>{{ day.day }}</td><td>{{ day.breakfast }}</td><td>{{ day.lunch }}</td><td>{{ day.dinner }}</td><td>{{ day.snacks | join(", ") }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>Shopping List (Weekly)</h2>
+<div class="grid-3">
+  {% for bucket in shopping_list %}
+  <div class="card">
+    <h3>{{ bucket.category }}</h3>
+    <ul class="list-tight">
+      {% for item in bucket.items %}<li><span class="checkbox"></span>{{ item }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="page-break"></div>
+
+<h2>Daily Trackers</h2>
+<table class="table">
+  <thead><tr><th>Metric</th>{% for d in days %}<th>{{ d }}</th>{% endfor %}</tr></thead>
+  <tbody>
+    <tr><td>Water (✓)</td>{% for d in days %}<td></td>{% endfor %}</tr>
+    <tr><td>Veg/Fruit (✓)</td>{% for d in days %}<td></td>{% endfor %}</tr>
+    <tr><td>Energy (1–10)</td>{% for d in days %}<td></td>{% endfor %}</tr>
+    <tr><td>Mood (1–10)</td>{% for d in days %}<td></td>{% endfor %}</tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>Weekly Reflection</h2>
+<div class="grid-2">
+  <div class="card">
+    <h3>How did I feel?</h3>
+    <p class="small">Energy, mood, cravings, digestion…</p>
+    <div style="height:120px;border:1px dashed var(--line); border-radius:8px;"></div>
+  </div>
+  <div class="card">
+    <h3>Next Week Focus</h3>
+    <ul class="list-tight">
+      <li><span class="checkbox"></span> Hydration goal</li>
+      <li><span class="checkbox"></span> Protein with each meal</li>
+      <li><span class="checkbox"></span> Fiber target</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

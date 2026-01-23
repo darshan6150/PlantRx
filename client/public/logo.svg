@@ -1,0 +1,62 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="256" cy="256" r="256" fill="url(#bgGradient)"/>
+  
+  <!-- Main Leaf Shape -->
+  <path d="M256 120C200 120 156 150 156 190C156 230 180 260 210 280C220 300 230 320 240 340C245 350 250 360 256 370C262 360 267 350 272 340C282 320 292 300 302 280C332 260 356 230 356 190C356 150 312 120 256 120Z" fill="url(#leafGradient)" stroke="url(#leafStroke)" stroke-width="3"/>
+  
+  <!-- Leaf Vein Details -->
+  <path d="M256 130C256 130 280 160 300 200C310 220 315 240 315 260" stroke="url(#veinGradient)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M256 130C256 130 232 160 212 200C202 220 197 240 197 260" stroke="url(#veinGradient)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M256 130L256 280" stroke="url(#veinGradient)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Smaller accent leaves -->
+  <path d="M320 200C330 195 340 200 345 210C350 220 345 230 335 235C325 240 315 235 310 225C305 215 310 205 320 200Z" fill="url(#accentGradient)" opacity="0.8"/>
+  <path d="M192 200C182 195 172 200 167 210C162 220 167 230 177 235C187 240 197 235 202 225C207 215 202 205 192 200Z" fill="url(#accentGradient)" opacity="0.8"/>
+  
+  <!-- Subtle shadow/depth -->
+  <ellipse cx="256" cy="380" rx="40" ry="10" fill="url(#shadowGradient)" opacity="0.3"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGradient" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="50%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#EAB308"/>
+    </radialGradient>
+    
+    <!-- Main leaf gradient -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FACC15"/>
+      <stop offset="30%" stop-color="#EAB308"/>
+      <stop offset="70%" stop-color="#CA8A04"/>
+      <stop offset="100%" stop-color="#A16207"/>
+    </linearGradient>
+    
+    <!-- Leaf stroke gradient -->
+    <linearGradient id="leafStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A16207"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    
+    <!-- Vein gradient -->
+    <linearGradient id="veinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="50%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#FACC15"/>
+    </linearGradient>
+    
+    <!-- Accent gradient -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#FACC15"/>
+    </linearGradient>
+    
+    <!-- Shadow gradient -->
+    <radialGradient id="shadowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#78350F" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#78350F" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

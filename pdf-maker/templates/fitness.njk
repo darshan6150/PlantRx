@@ -1,0 +1,61 @@
+{% extends "base.njk" %}
+{% block content %}
+<h2>4-Week Training Calendar</h2>
+{% for week in weeks %}
+<div class="card section">
+  <h3>Week {{ loop.index }} — Focus: {{ week.focus }}</h3>
+  <table class="table">
+    <thead><tr><th>Day</th><th>Workout</th><th>Sets × Reps</th><th>Notes</th></tr></thead>
+    <tbody>
+      {% for day in week.days %}
+      <tr><td>{{ day.name }}</td><td>{{ day.workout }}</td><td>{{ day.sets_reps }}</td><td>{{ day.notes or '' }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% if loop.index % 2 == 0 %}<div class="page-break"></div>{% endif %}
+{% endfor %}
+
+<h2>Daily Structure</h2>
+<div class="grid-3">
+  <div class="card"><h3>Warm-up</h3><ul class="list-tight">{% for i in structure.warmup %}<li>{{ i }}</li>{% endfor %}</ul></div>
+  <div class="card"><h3>Main</h3><ul class="list-tight">{% for i in structure.main %}<li>{{ i }}</li>{% endfor %}</ul></div>
+  <div class="card"><h3>Cool-down</h3><ul class="list-tight">{% for i in structure.cooldown %}<li>{{ i }}</li>{% endfor %}</ul></div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>Progress Logs</h2>
+<div class="grid-3">
+  <div class="card">
+    <h3>Strength</h3>
+    <table class="table"><thead><tr><th>Lift</th><th>Week 1</th><th>Week 2</th><th>Week 3</th><th>Week 4</th></tr></thead>
+      <tbody>{% for l in logs.strength %}<tr><td>{{ l }}</td><td></td><td></td><td></td><td></td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Endurance</h3>
+    <table class="table"><thead><tr><th>Test</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th></tr></thead>
+      <tbody>{% for e in logs.endurance %}<tr><td>{{ e }}</td><td></td><td></td><td></td><td></td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Flexibility</h3>
+    <table class="table"><thead><tr><th>Test</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th></tr></thead>
+      <tbody>{% for f in logs.flexibility %}<tr><td>{{ f }}</td><td></td><td></td><td></td><td></td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>Weekly Check-In</h2>
+<table class="table">
+  <thead><tr><th>Question</th>{% for w in [1,2,3,4] %}<th>Week {{ w }}</th>{% endfor %}</tr></thead>
+  <tbody>
+    <tr><td>What got easier?</td>{% for w in [1,2,3,4] %}<td></td>{% endfor %}</tr>
+    <tr><td>What's still hard?</td>{% for w in [1,2,3,4] %}<td></td>{% endfor %}</tr>
+    <tr><td>Energy (1–10)</td>{% for w in [1,2,3,4] %}<td></td>{% endfor %}</tr>
+  </tbody>
+</table>
+{% endblock %}

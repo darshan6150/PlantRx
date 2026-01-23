@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Service Worker Kill Switch - Remove all cached workers and data -->
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister().catch(()=>{})));
+      if (window.caches && caches.keys) { caches.keys().then(keys => keys.forEach(k => caches.delete(k))); }
+    }
+    </script>
+    
+    <!-- Safari Cache Recovery - Detect stale React modules and prompt refresh -->
+    <script>
+    (function() {
+      var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      if (isSafari) {
+        var lastRefresh = sessionStorage.getItem('plantrx_cache_check');
+        var now = Date.now();
+        if (!lastRefresh || (now - parseInt(lastRefresh)) > 300000) {
+          sessionStorage.setItem('plantrx_cache_check', now.toString());
+        }
+      }
+      window.onerror = function(msg, src, line, col, err) {
+        if (msg && msg.indexOf && (msg.indexOf('dispatcher') !== -1 || msg.indexOf('useState') !== -1 || msg.indexOf('Invalid hook call') !== -1)) {
+          document.body.innerHTML = '<div style="font-family:system-ui,-apple-system,sans-serif;max-width:500px;margin:100px auto;padding:40px;text-align:center;background:linear-gradient(135deg,#fef3c7 0%,#fef9c3 100%);border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.1);">' +
+            '<h2 style="color:#92400e;margin-bottom:16px;">Cache Refresh Required</h2>' +
+            '<p style="color:#78350f;margin-bottom:24px;">Your browser has cached outdated files. Please clear your cache to continue.</p>' +
+            '<button onclick="sessionStorage.clear();localStorage.removeItem(\'plantrx_cache_check\');location.reload(true)" style="background:#f59e0b;color:white;border:none;padding:12px 32px;border-radius:8px;font-size:16px;cursor:pointer;font-weight:600;">Refresh Now</button>' +
+            '<p style="color:#92400e;font-size:12px;margin-top:16px;">Safari: Press Cmd+Option+E then Cmd+R</p>' +
+          '</div>';
+          return true;
+        }
+      };
+    })();
+    </script>
+    
+    <!-- Safe no-ops to prevent crashes -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+    window.mc = window.mc || function(){};
+    </script>
+    
+    <!-- CSP set by server header only - no meta tag -->
+    
+    <!-- Google Tag Manager - Loaded ONLY after cookie consent via CookieConsent.tsx -->
+    <!-- GTM ID: GTM-MLKLVC58 -->
+    
+    <!-- Permanent SW kill switch -->
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister().catch(()=>{})));
+      if (window.caches?.keys) caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
+    }
+    </script>
+    
+    <!-- Google Analytics removed - now handled through GTM -->
+    
+    <!-- Metricool & AdSense - Now loaded dynamically after cookie consent -->
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5245165544457327" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-5245165544457327">
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    
+    <!-- Core Web Vitals Performance Optimizations - Google Fonts REMOVED -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//tracker.metricool.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    
+    <!-- LCP Optimization: Preload critical above-the-fold assets -->
+    <link rel="preload" href="/logo.png" as="image" type="image/png" fetchpriority="high">
+    <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml">
+    
+    <!-- Critical Resource Preloading for Performance -->
+    <link rel="modulepreload" href="/src/main.tsx">
+    <link rel="prefetch" href="/src/pages/Remedies.tsx">
+    <link rel="prefetch" href="/src/pages/SmartTools.tsx">
+    
+    <!-- SEO Meta Tags -->
+    <title>PlantRx - Expert Natural Health Platform | Plant-Based Remedies & Expert Guidance</title>
+    <meta name="description" content="PlantRx is the world's leading expert-driven natural health platform with 166+ verified plant-based remedies. Get personalized natural healing solutions, expert consultations, and smart symptom analysis. Your trusted partner for natural wellness." />
+    <meta name="keywords" content="PlantRx, Plant Rx, PlantRX, natural remedies, plant-based medicine, expert health platform, herbal treatments, natural healing, wellness solutions, plant medicine, holistic health, alternative medicine, herbal remedies, natural supplements" />
+    <link rel="canonical" href="https://plantrxapp.com/" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PlantRx",
+      "alternateName": ["Plant Rx", "PlantRX", "Plant RX"],
+      "url": "https://plantrxapp.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://plantrxapp.com/logo.png",
+        "width": 512,
+        "height": 512,
+        "caption": "PlantRx Yellow Leaf Logo - Expert Natural Health Platform"
+      },
+      "image": "https://plantrxapp.com/logo.png",
+      "description": "PlantRx is the world's leading expert-driven natural health platform offering verified plant-based remedies, expert guidance, and personalized wellness solutions.",
+      "foundingDate": "2025",
+      "founder": {
+        "@type": "Person",
+        "name": "PlantRx Team"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+44-20-7123-4567",
+        "contactType": "customer service",
+        "email": "info@plantrxapp.com"
+      },
+      "sameAs": [
+        "https://twitter.com/plantrxapp",
+        "https://instagram.com/plantrxapp"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "PlantRx",
+        "logo": "https://plantrxapp.com/logo.png"
+      }
+    }
+    </script>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PlantRx - Expert Natural Health Platform | Plant-Based Remedies" />
+    <meta property="og:description" content="PlantRx offers 166+ verified plant-based remedies with expert symptom analysis. Get expert natural health guidance and personalized wellness solutions." />
+    <meta property="og:image" content="https://plantrxapp.com/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="PlantRx Yellow Leaf Logo - Expert Natural Health Platform" />
+    <meta property="og:url" content="https://plantrxapp.com" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PlantRx - Expert Natural Health Platform" />
+    <meta name="twitter:description" content="PlantRx offers 166+ verified plant-based remedies with expert symptom analysis and expert guidance." />
+    <meta name="twitter:image" content="https://plantrxapp.com/logo.png" />
+    <meta name="twitter:image:alt" content="PlantRx Yellow Leaf Logo - Expert Natural Health Platform" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="msapplication-TileImage" content="/apple-touch-icon.png" />
+    <meta name="msapplication-TileColor" content="#f59e0b" />
+    
+    <!-- Additional favicon sizes for better browser support -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="mask-icon" href="/favicon.svg" color="#f59e0b" />
+    
+    <!-- Stripe Pricing Table Script -->
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    
+    <!-- Google Translate removed per security requirements -->
+    
+    <!-- Google Translate styles removed -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLKLVC58"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- Replit dev banner removed per security requirements -->
+    
+    <!--Start of Tawk.to Script - Deferred until after page load for LCP optimization -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6942bf275320731980626fbd/1jcmbldaf';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+      }, 2000);
+    });
+    </script>
+    <!--End of Tawk.to Script-->
+  </body>
+</html>
