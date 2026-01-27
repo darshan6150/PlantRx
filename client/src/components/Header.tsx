@@ -246,7 +246,15 @@ export default function Header() {
         { href: "/articles/science", label: "Science", isPremium: false, icon: FlaskConical, color: "text-indigo-500" },
       ],
     },
-    { href: "/store", label: t('nav.store', 'Store'), isPremium: false },
+    { href: "/store",
+       label: t('nav.store', 'Store'),
+        isPremium: false,
+        subItems: [
+          { href: "/strips", label: "Strips", isPremium: false, icon: Grip, color: "text-green-500" },
+          // { href: "/store/saved", label: "Saved", isPremium: false, icon: Bookmark, color: "text-rose-500" },
+          // { href: "/store/saved", label: "Saved", isPremium: false, icon: Bookmark, color: "text-rose-500" },
+        ],
+       },
     {
       href: "/smart-tools",
       label: t('nav.tools', 'Tools'),
