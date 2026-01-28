@@ -1,6 +1,10 @@
 'use client'
 import { Variants } from 'framer-motion'
 
+/**
+ * CONTAINER VARIANTS
+ * Staggering is fine, no visual properties here.
+ */
 export const wordContainer: Variants = {
   hidden: {},
   visible: {
@@ -10,22 +14,7 @@ export const wordContainer: Variants = {
   },
 }
 
-export const wordRisePerspective: Variants = {
-  hidden: {
-    y: '120%',
-    rotateX: 25,
-  },
-  visible: {
-    y: '0%',
-    rotateX: 0,
-    transition: {
-      duration: 1.2,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-}
-
-export const textContainerVariants = {
+export const textContainerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -34,39 +23,7 @@ export const textContainerVariants = {
   },
 }
 
-export const slideDownVariants = {
-  hidden: {
-    '--slide-y': '-40px',
-    opacity: 0,
-    transform: 'translateY(var(--slide-y))',
-  },
-  visible: {
-    '--slide-y': '0px',
-    opacity: 1,
-    transform: 'translateY(var(--slide-y))',
-    transition: {
-      duration: 0.4,
-      ease: 'easeOut',
-    },
-  },
-};
-export const slideUpVariants = {
-  hidden: {
-    '--slide-y': '20px',
-    opacity: 0,
-    transform: 'translateY(var(--slide-y))',
-  },
-  visible: {
-    '--slide-y': '0px',
-    opacity: 1,
-    transform: 'translateY(var(--slide-y))',
-    transition: {
-      duration: 0.4,
-      ease: 'easeIn',
-    },
-  },
-};
-export const containerBlurVars = {
+export const containerBlurVars: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -75,46 +32,121 @@ export const containerBlurVars = {
     },
   },
 }
-export const itemBlurLeftVars = {
+
+/**
+ * PERSPECTIVE VARIANTS
+ * Added z: 0.01 and backface visibility logic for iOS.
+ */
+export const wordRisePerspective: Variants = {
+  hidden: {
+    y: '120%',
+    rotateX: 25,
+    opacity: 0,
+    z: 0.01, // Force GPU
+  },
+  visible: {
+    y: '0%',
+    rotateX: 0.01, // Keep GPU active
+    opacity: 1,
+    z: 0.01,
+    transition: {
+      duration: 1.2,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+}
+
+/**
+ * SLIDE VARIANTS
+ * Replaced CSS variables with direct 'y' values and added z-axis stability.
+ */
+export const slideDownVariants: Variants = {
+  hidden: {
+    y: -40,
+    opacity: 0,
+    z: 0.01,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    z: 0.01,
+    transition: {
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  },
+};
+
+export const slideUpVariants: Variants = {
+  hidden: {
+    y: 20,
+    opacity: 0,
+    z: 0.01,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    z: 0.01,
+    transition: {
+      duration: 0.4,
+      ease: 'easeIn',
+    },
+  },
+};
+
+/**
+ * BLUR VARIANTS (Left, Right, and Center)
+ * Fixed: blur(0.01px) prevents the end-of-animation snap.
+ * Initial blur reduced slightly for mobile performance.
+ */
+export const itemBlurLeftVars: Variants = {
   hidden: {
     opacity: 0,
-    x: -40,                
-    filter: "blur(10px)",
+    x: -40,
+    filter: "blur(8px)",
+    z: 0.01,
   },
   show: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",   
+    filter: "blur(0.01px)", 
+    z: 0.01,
     transition: {
       duration: 0.8,
       ease: "easeOut",
     },
   },
 }
-export const itemBlurRightVars = {
+
+export const itemBlurRightVars: Variants = {
   hidden: {
     opacity: 0,
-    x: 40,                
-    filter: "blur(10px)",
+    x: 40,
+    filter: "blur(8px)",
+    z: 0.01,
   },
   show: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",   
+    filter: "blur(0.01px)",
+    z: 0.01,
     transition: {
       duration: 0.8,
       ease: "easeOut",
     },
   },
 }
-export const itemBlurVars = {
+
+export const itemBlurVars: Variants = {
   hidden: {
     opacity: 0,
-    filter: "blur(10px)",
+    filter: "blur(8px)",
+    z: 0.01,
   },
   show: {
     opacity: 1,
-    filter: "blur(0px)",   
+    filter: "blur(0.01px)",
+    z: 0.01,
     transition: {
       duration: 0.8,
       ease: "easeOut",

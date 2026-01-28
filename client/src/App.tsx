@@ -204,7 +204,7 @@ function Router() {
         <Header />
       </Suspense>
 
-      <div className="pt-20">
+      <div className="lg:pt-20 sm:pt-16 pt-14">
         {/* Defer analytics components - render after initial paint */}
         <Suspense fallback={null}>
           <SiteWideAnalytics />

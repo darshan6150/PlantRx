@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
 
@@ -9,9 +8,7 @@ module.exports = {
 
   theme: {
     extend: {
-      /* --------------------
-         BORDER RADIUS
-      -------------------- */
+
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
@@ -20,9 +17,6 @@ module.exports = {
         '4xl': '2rem',
       },
 
-      /* --------------------
-         COLORS (CSS VAR SAFE)
-      -------------------- */
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
@@ -52,39 +46,29 @@ module.exports = {
         input: 'var(--input)',
         ring: 'var(--ring)',
 
-        /* Brand helpers */
         gold: '#d4af37',
         cream: '#fffeef',
         green: '#059669',
         'light-orange': '#eab308',
       },
 
-      /* --------------------
-         FONTS
-      -------------------- */
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         heading: ['Playfair Display', 'serif'],
         playfair: ['Playfair Display', 'serif'],
       },
 
-      /* --------------------
-         LETTER SPACING
-      -------------------- */
+
       letterSpacing: {
         luxury: '0.03em',
       },
 
-      /* --------------------
-         Z-INDEX FIXES
-      -------------------- */
+
       zIndex: {
         max: '999999',
       },
 
-      /* --------------------
-         ANIMATIONS
-      -------------------- */
+
       keyframes: {
         'accordion-down': {
           from: { height: '0' },

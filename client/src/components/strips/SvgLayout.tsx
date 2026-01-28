@@ -1,57 +1,11 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 
 const SvgLayout = () => {
 
-    const svgVariants = {
-        hidden: {
-            pathLength: 0,
-            opacity: 0,
-            fillOpacity: 0
-        },
-        visible: {
-            pathLength: 1,
-            opacity: 1,
-            fillOpacity: 0.1, 
-            transition: {
-                pathLength: {
-                    type: "tween",
-                    duration: 9, 
-                    bounce: 0,
-                    ease: "easeInOut"
-                },
-                opacity: { duration: 0.9 },
-                fillOpacity: { delay: 9, duration: 5 } 
-            }
-        }
-    };
-
-    const drawVariant = {
-        hidden: {
-            pathLength: 0,
-            opacity: 0,
-            fillOpacity: 0
-        },
-        visible: (i: number) => ({
-            pathLength: 1,
-            opacity: 1,
-            fillOpacity: 0.1, 
-            transition: {
-                pathLength: {
-                    delay: i * 0.3, 
-                    type: "spring",
-                    duration: 3,
-                    bounce: 0
-                },
-                opacity: { delay: i * 0.3, duration: 0.5 },
-                fillOpacity: { delay: (i * 0.3) + 2.5, duration: 1 }
-            }
-        })
-    };
 
     return (
-        <main className="">
-            <section className="fixed inset-0 bg-transparent opacity-50">
+        <div className="">
+            <div className="fixed inset-0 bg-transparent opacity-50 max-lg:hidden">
                 <div className="banner-anim absolute top-0 w-auto h-full pointer-events-none">
                     <svg width="1920" height="1280" viewBox="0 0 1920 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_26_10" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1280">
@@ -125,8 +79,8 @@ const SvgLayout = () => {
 
 
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
     );
 };
 

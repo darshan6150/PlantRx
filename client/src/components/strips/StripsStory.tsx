@@ -135,10 +135,6 @@ export default function StripStory() {
   );
 }
 
-/* ---------------------------------- */
-/* Character */
-/* ---------------------------------- */
-
 interface CharacterProps {
   char: string;
   className?: string;
@@ -151,14 +147,13 @@ function Character({ char, className = "", progress, range }: CharacterProps) {
     const opacity = useTransform(progress, range, [0, 1]);
     const y = useTransform(progress, range, [20, 0]);
     
-    // Use this for complex string values like filters
     const filter = useMotionTemplate`blur(${blur}px)`;
   
     return (
       <motion.span
         className={className}
         style={{
-          filter: filter, // Now it reacts to scroll
+          filter: filter, 
           opacity,
           y,
           display: "inline-block",
@@ -169,10 +164,6 @@ function Character({ char, className = "", progress, range }: CharacterProps) {
       </motion.span>
     );
   }
-
-/* ---------------------------------- */
-/* Story Image */
-/* ---------------------------------- */
 
 interface StoryImageProps {
   src: string;
@@ -216,7 +207,7 @@ function StoryImage({
 
   return (
     <motion.div
-      className="absolute z-20 pointer-events-none w-full max-w-sm opacity-100"
+      className="text-with-img absolute w-full max-w-[30%] z-20 pointer-events-none max-lg:!transform-none max-[1025px]:!top-[unset] max-[1025px]:bottom-[150px] max-sm:bottom-[100px] max-lg:!opacity-100"
       style={{
         y,
         x,
@@ -230,6 +221,8 @@ function StoryImage({
     >
       <img
         src={src}
+        width={1080}
+        height={1080}
         alt="Product Story"
         className="w-full h-auto object-contain drop-shadow-2xl"
       />

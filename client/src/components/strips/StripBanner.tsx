@@ -21,22 +21,21 @@ export default function StripBanner() {
 
     return (
         <section className="hero-banner-section relative">
-            <div className="relative lg:h-[calc(100dvh-96px)] h-[calc(100dvh)] w-full overflow-hidden max-lg:mt-5">
+            <div className="relative lg:h-[calc(100dvh-96px)] h-[calc(100dvh)] w-full overflow-hidden max-lg:pt-20">
                 <div className="container h-full">
-                    <div className="h-full w-full flex justify-center items-start lg:items-center ">
+                    <div className="h-full w-full flex justify-center items-start lg:items-center">
                         <div className="w-full relative z-10">
-                            <div className="flex max-lg:flex-col gap-[120px] items-center">
-
+                            <div className="flex max-lg:flex-col md:gap-20 gap-10 items-center justify-between">
                                 <div className="lg:w-5/12 w-full">
                                     <div className="head-wrapper">
-                                        <Parallax className="max-lg:transform-none!" distance={200}>
+                                        <Parallax className="max-lg:!transform-none" distance={200}>
                                             <motion.h1
                                                 variants={wordVars}
                                                 initial="initial"
                                                 animate="animate"
                                                 transition={{ duration: 1.1 }}
                                                 className='relative font-bold font-heading'>
-                                                Mushroom <br></br><span className="green">focus</span> <span className="orange">Strips</span>
+                                                Mushroom <br className="max-lg:hidden"></br><span className="green">focus</span> <span className="orange">Strips</span>
                                             </motion.h1>
                                             <RevealText tag="p" className="mt-5 !font-heading lg:*:!text-2xl lg:*:!leading-7 md:*:!text-xl sm:*:!text-lg *:!leading-5 *:!text-base">
                                                 Enhance focus and everyday wellness with chocolate-flavored Mushroom Focus Strips powered by functional mushrooms.
@@ -46,12 +45,6 @@ export default function StripBanner() {
                                 </div>
 
                                 <div className="lg:w-7/12 w-full relative flex justify-center items-center">
-                                    {/* <div className="absolute inset-0 pointer-events-none">
-                                        <motion.div variants={iconLoadVars(1.2)} initial="initial" animate="animate" className="absolute -top-16 left-[15%] max-[575px]:-top-13 max-[575px]:left-0 xl:w-24 xl:h-24 w-20 h-20 max-[575px]:w-18 max-[575px]:h-18"><Image src="/hero-1.png" alt="icon" width={100} height={100} /></motion.div>
-                                        <motion.div variants={iconLoadVars(1.4)} initial="initial" animate="animate" className="absolute -top-16 right-[15%] max-[575px]:-top-13 max-[575px]:right-0 xl:w-24 xl:h-24 w-20 h-20 max-[575px]:w-18 max-[575px]:h-18"><Image src="/hero-2.png" alt="icon" width={100} height={100} /></motion.div>
-                                        <motion.div variants={iconLoadVars(1.6)} initial="initial" animate="animate" className="absolute -bottom-16 left-[15%] max-[575px]:-bottom-13 max-[575px]:left-0 xl:w-24 xl:h-24 w-20 h-20 max-[575px]:w-18 max-[575px]:h-18"><Image src="/hero-3.png" alt="icon" width={100} height={100} /></motion.div>
-                                        <motion.div variants={iconLoadVars(1.8)} initial="initial" animate="animate" className="absolute -bottom-16 right-[15%] max-[575px]:-bottom-13 max-[575px]:right-0 xl:w-24 xl:h-24 w-20 h-20 max-[575px]:w-18 max-[575px]:h-18"><Image src="/hero-4.png" alt="icon" width={100} height={100} /></motion.div>
-                                    </div> */}
                                     <div className="relative z-50">
                                         <div className="relative w-[300px] h-[300px] max-[575px]:w-[270px] xl:w-[450px] xl:h-[450px]">
                                             <div className="img-bg">
@@ -63,7 +56,6 @@ export default function StripBanner() {
                                                     className="drop-shadow-2xl"
                                                 />
                                             </div>
-                                            {/* The "Filling" effect is kept here via imgFrontLoadVars */}
                                             <motion.div
                                                 variants={imgFrontLoadVars as any}
                                                 initial="initial"
