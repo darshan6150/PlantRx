@@ -70,7 +70,7 @@ const StripsIngredients: React.FC = () => {
   );
 
   return (
-    <section ref={containerRef} className="product-box relative h-[600dvh]">
+    <section ref={containerRef} className="product-box relative md:h-[600dvh] h-[500dvh]">
       <div className="product-box sticky lg:pt-52 top-0 flex h-screen w-full items-center justify-center overflow-hidden">
         <div className="relative w-[300px] h-[330px] md:w-[500px] md:h-[500px]">
           <div className="absolute top-0 left-0 w-full z-0">

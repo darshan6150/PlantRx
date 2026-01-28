@@ -25,6 +25,7 @@ import { useClickAuthPrompt } from "./hooks/useClickAuthPrompt";
 import { SuspenseFallback } from "./components/SuspenseFallback";
 import NotFound from "@/pages/not-found";
 import Footer from "@/components/Footer";
+import EssentialOils from "./pages/EssentialOils";
 
 // Lazy load analytics/SEO components - these are non-critical for initial render
 const SiteWideAnalytics = lazy(() =>
@@ -224,6 +225,10 @@ function Router() {
             <Route
               path="/strips"
               component={Strips}
+            />
+            <Route
+              path="/essential-oils"
+              component={EssentialOils}
             />
             <Route
               path="/remedies/category/:category"

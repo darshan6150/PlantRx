@@ -2,6 +2,7 @@ import RevealText from "@/utils/RevealText";
 import { motion, useScroll, useTransform, MotionValue, useMotionTemplate } from "framer-motion";
 import { useRef, useMemo } from "react";
 import { useIsTablet } from "@/hooks/useIsTablet";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const title = "Focus That Fits Your Day";
 const lines = ["Clean energy and clarity in a simple daily strip."];
@@ -40,7 +41,7 @@ const imageData: ImageData[] = [
 
 export default function StripStory() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const isDesktop = useIsTablet(1280);
+  const isTablet = useIsMobile(1024);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -58,7 +59,7 @@ export default function StripStory() {
       const className = isFocusChar
         ? "text-green"
         : isDayChar
-        ? "text-secondary"
+        ? "text-secondary"  
         : "";
 
       return { char, start, end, className };
@@ -83,8 +84,8 @@ export default function StripStory() {
         <div className="text-image sticky top-0 lg:h-screen w-full lg:overflow-hidden">
           <div className="container flex flex-col items-center justify-center h-full ">
             <h2 className="font-body font-bold text-center max-w-xl md:max-w-[740px] xl:text-8xl xl:leading-25 lg:text-6xl lg:leading-23 md:text-5xl md:leading-17 mb-2">
-              {!isDesktop ? (
-                <span className="flex flex-wrap justify-center">
+              {!isTablet ? (
+                <span className="flex flex-wrap justify-center"> 
                   {characters.map((item, i) => (
                     <Character
                       key={i}
@@ -104,7 +105,7 @@ export default function StripStory() {
             </h2>
 
             <div className="mt-0 lg:mt-4 text-center z-10">
-              {isDesktop ? (
+              {isTablet ? (
                 lines.map((text, i) => (
                   <motion.div key={i} style={{ clipPath }}>
                     {text}
@@ -135,9 +136,9 @@ export default function StripStory() {
   );
 }
 
-interface CharacterProps {
+interface CharacterProps { 
   char: string;
-  className?: string;
+  className?: string; 
   progress: MotionValue<number>;
   range: [number, number];
 }
