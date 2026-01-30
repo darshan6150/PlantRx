@@ -1269,9 +1269,9 @@ iframe[src*="tawk.to"] {
 
   h1,
   .h1 {
-    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-bold tracking-tight;
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[96px] font-bold tracking-tight;
   }
-
+ 
   h2,
   .h2 {
     @apply text-xl sm:text-4xl lg:text-5xl lg:leading-[55px] font-bold tracking-tight;

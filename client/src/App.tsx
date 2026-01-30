@@ -26,6 +26,7 @@ import { SuspenseFallback } from "./components/SuspenseFallback";
 import NotFound from "@/pages/not-found";
 import Footer from "@/components/Footer";
 import EssentialOils from "./pages/EssentialOils";
+import Supplements from "./pages/Supplements";
 
 // Lazy load analytics/SEO components - these are non-critical for initial render
 const SiteWideAnalytics = lazy(() =>
@@ -229,6 +230,10 @@ function Router() {
             <Route
               path="/essential-oils"
               component={EssentialOils}
+            />
+            <Route
+              path="/supplements"
+              component={Supplements}
             />
             <Route
               path="/remedies/category/:category"
